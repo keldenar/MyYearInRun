@@ -16,3 +16,5 @@ Route::get('/', 'HomeController@index');
 Route::auth();
 Route::post('/runs', 'HomeController@runs');
 Route::get('/home', 'HomeController@index');
+Route::get('/goal', 'HomeController@getGoal');
+Route::post('/goal', 'HomeController@postGoal');

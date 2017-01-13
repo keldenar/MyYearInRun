@@ -15,7 +15,7 @@ class CreateGoalsTable extends Migration
         Schema::create('goals', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('goal_miles');
-            $table->date('goal_year');
+            $table->integer('goal_year');
             $table->unsignedInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
             $table->timestamps();

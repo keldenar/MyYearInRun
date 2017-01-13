@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-push-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="text-center">You've Completed {{ $runs->sum('distance') }} miles of {{$goal or 0}}.</div>
+                    <div class="text-center">You've Completed {{ $runs->sum('distance') }} miles of your {{$goal->goal_miles or 0}} mile goal.</div>
                     <hr>
                     <div class="text-center h4">Why don't you log a run!</div>
                     <form action="{{ url("/runs") }}" method="POST">
@@ -39,7 +39,9 @@
 @if (null !== $message)
                     <hr>
                     <div class="text-center h4">{{ $message }}</div>
+                    <hr>
 @endif
+                    <div class="text-center"><a href="{{ url("/goal") }}">Change your goal for the year.</a></div>
                 </div>
             </div>
         </div>
