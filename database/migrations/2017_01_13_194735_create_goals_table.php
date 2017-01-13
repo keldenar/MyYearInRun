@@ -16,8 +16,8 @@ class CreateGoalsTable extends Migration
             $table->increments('id');
             $table->integer('goal_miles');
             $table->date('goal_year');
-            $table->unsignedInteger("user_id")->unique();
-            $table->foreign("user_id")->referenes("id")->on("users")->onDelete("cascade");
+            $table->unsignedInteger("user_id");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
             $table->timestamps();
         });
     }
